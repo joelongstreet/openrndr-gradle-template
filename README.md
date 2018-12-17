@@ -2,8 +2,6 @@
 
 A bare-bones template for writing [OPENRNDR](http://openrndr.org) programs. Contains Gradle project files and a minimal program example.
 
-It demonstrates the _OO_ and _FP_ coding _styles_ - choose one of the two source files depending on your approach.
-
 ## Intellij IDE
 
 * Click the `run` widget next to `main()` in the left margin/gutter of the source file. 
@@ -26,11 +24,6 @@ java -jar myjar.jar
  OR
  
 java -cp myjar.jar TemplateProgramKt
-```
-
-* For TemplateProgramFP.kt
-```
-java -cp myjar.jar TemplateProgramFPKt
 ```
 
 ## On MacOS

@@ -1,27 +1,20 @@
-import org.openrndr.*
+import org.openrndr.application
 import org.openrndr.color.ColorRGBa
-import org.openrndr.math.Vector2
-import org.openrndr.shape.contour
+import kotlin.random.Random
 
-class TemplateProgram: Program() {
-    override fun draw() {
-        drawer.background(ColorRGBa.BLACK)
-        drawer.fill = null
-        drawer.stroke = ColorRGBa.WHITE
+fun main() = application {
 
-        val c = contour {
-            moveTo(Vector2(10.0, 10.0))
-            lineTo(cursor + Vector2(400.0, 400.0))
-            lineTo(cursor - Vector2(-100.0, 100.0))
-            lineTo(anchor)
-        }
-        drawer.contour(c)
+    configure {
+        width = 640
+        height = 480
     }
-}
 
-fun main(args: Array<String>) {
-    application(TemplateProgram(),
-            configuration {
+    program {
+        val r = 40.0
 
-            })
+        extend {
+            drawer.fill = ColorRGBa.PINK
+            drawer.circle(Random.nextDouble(0.0, width * 1.0), Random.nextDouble(0.0, height * 1.0), r)
+        }
+    }
 }
